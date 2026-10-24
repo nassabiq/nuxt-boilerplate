@@ -1,0 +1,46 @@
+{
+    "name": "nuxt-boilerplate",
+    "type": "module",
+    "private": true,
+    "scripts": {
+        "build": "nuxt build",
+        "dev": "nuxt dev",
+        "generate": "nuxt generate",
+        "preview": "nuxt preview",
+        "postinstall": "nuxt prepare",
+        "lint": "eslint .",
+        "typecheck": "vue-tsc --noEmit",
+        "test": "vitest run",
+        "format": "prettier --write .",
+        "format:check": "prettier --check ."
+    },
+    "dependencies": {
+        "@nuxt/eslint": "1.17.0",
+        "@nuxt/fonts": "1.1.0",
+        "@nuxt/icon": "2.6.0",
+        "@pinia/nuxt": "1.0.3",
+        "@tailwindcss/vite": "^4.0.0",
+        "@vee-validate/zod": "^4.15.0",
+        "class-variance-authority": "^0.7.1",
+        "clsx": "^2.1.1",
+        "eslint": "^10.13.0",
+        "lucide-vue-next": "^0.475.0",
+        "nuxt": "^4.6.2",
+        "pinia": "^4.1.0",
+        "radix-vue": "^1.9.15",
+        "tailwind-merge": "^3.0.1",
+        "tailwindcss": "^4.0.0",
+        "vee-validate": "^4.15.0",
+        "vue": "^3.5.44",
+        "vue-router": "^5.4.0",
+        "zod": "^3.24.2"
+    },
+    "devDependencies": {
+        "@playwright/test": "^1.64.1",
+        "@vue/test-utils": "^2.4.6",
+        "jsdom": "^26.0.0",
+        "prettier": "^3.9.10",
+        "vitest": "^3.0.5",
+        "vue-tsc": "^3.3.13"
+    }
+}

@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+    :root {
+        --background: 0 0% 100%;
+        --foreground: 222 47% 11%;
+        --card: 0 0% 100%;
+        --card-foreground: 222 47% 11%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 222 47% 11%;
+
+        /* TailAdmin Brand Green #27a043 */
+        --primary: 134 61% 39%;
+        --primary-foreground: 0 0% 100%;
+
+        --secondary: 220 14% 96%;
+        --secondary-foreground: 222 47% 11%;
+        --muted: 220 14% 96%;
+        --muted-foreground: 215 16% 47%;
+
+        /* Brand tint #e9f8ef */
+        --accent: 139 50% 95%;
+        --accent-foreground: 134 61% 39%;
+
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 0 0% 100%;
+        --border: 220 13% 91%;
+        --input: 220 13% 91%;
+        --ring: 134 61% 39%;
+        --radius: 0.5rem;
+    }
+
+    .dark {
+        /* TailAdmin Dark #101828 (bg) & #1d2939 (card) */
+        --background: 222 47% 11%;
+        --foreground: 210 40% 98%;
+        --card: 217 33% 17%;
+        --card-foreground: 210 40% 98%;
+        --popover: 217 33% 17%;
+        --popover-foreground: 210 40% 98%;
+
+        --primary: 134 61% 45%;
+        --primary-foreground: 0 0% 100%;
+
+        --secondary: 217 33% 22%;
+        --secondary-foreground: 210 40% 98%;
+        --muted: 217 33% 20%;
+        --muted-foreground: 215 20% 65%;
+
+        --accent: 134 61% 39% / 0.15;
+        --accent-foreground: 134 61% 65%;
+
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 0 0% 100%;
+        --border: 217 33% 22%;
+        --input: 217 33% 22%;
+        --ring: 134 61% 45%;
+    }
+
+    * {
+        border-color: hsl(var(--border));
+    }
+
+    html {
+        scroll-behavior: smooth;
+        font-family:
+            'Outfit',
+            -apple-system,
+            BlinkMacSystemFont,
+            'Segoe UI',
+            Roboto,
+            sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+        background-color: hsl(var(--background));
+        color: hsl(var(--foreground));
+        font-family:
+            'Outfit',
+            -apple-system,
+            BlinkMacSystemFont,
+            'Segoe UI',
+            Roboto,
+            sans-serif;
+        font-feature-settings:
+            'rlig' 1,
+            'calt' 1;
+        min-height: 100vh;
+    }
+
+    ::selection {
+        background-color: hsl(var(--primary) / 0.2);
+        color: hsl(var(--foreground));
+    }
+}
+
+/* Utility bindings for shadcn theme colors */
+@theme {
+    --font-sans: 'Outfit', sans-serif;
+    --color-background: hsl(var(--background));
+    --color-foreground: hsl(var(--foreground));
+    --color-card: hsl(var(--card));
+    --color-card-foreground: hsl(var(--card-foreground));
+    --color-popover: hsl(var(--popover));
+    --color-popover-foreground: hsl(var(--popover-foreground));
+    --color-primary: hsl(var(--primary));
+    --color-primary-foreground: hsl(var(--primary-foreground));
+    --color-secondary: hsl(var(--secondary));
+    --color-secondary-foreground: hsl(var(--secondary-foreground));
+    --color-muted: hsl(var(--muted));
+    --color-muted-foreground: hsl(var(--muted-foreground));
+    --color-accent: hsl(var(--accent));
+    --color-accent-foreground: hsl(var(--accent-foreground));
+    --color-destructive: hsl(var(--destructive));
+    --color-destructive-foreground: hsl(var(--destructive-foreground));
+    --color-border: hsl(var(--border));
+    --color-input: hsl(var(--input));
+    --color-ring: hsl(var(--ring));
+    --radius-sm: calc(var(--radius) - 4px);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) + 4px);
+    --radius-2xl: calc(var(--radius) + 8px);
+
+    --color-brand-25: #f4fbf7;
+    --color-brand-50: #e9f8ef;
+    --color-brand-100: #d3f1de;
+    --color-brand-200: #a8e3be;
+    --color-brand-300: #79d195;
+    --color-brand-400: #4db86d;
+    --color-brand-500: #27a043;
+    --color-brand-600: #1e8c39;
+    --color-brand-700: #187030;
+    --color-brand-800: #145828;
+    --color-brand-900: #0f4220;
+    --color-brand-950: #082913;
+
+    --color-gray-25: #fcfcfd;
+    --color-gray-50: #f9fafb;
+    --color-gray-100: #f2f4f7;
+    --color-gray-200: #e4e7ec;
+    --color-gray-300: #d0d5dd;
+    --color-gray-400: #98a2b3;
+    --color-gray-500: #667085;
+    --color-gray-600: #475467;
+    --color-gray-700: #344054;
+    --color-gray-800: #1d2939;
+    --color-gray-900: #101828;
+    --color-gray-950: #0c111d;
+}
+
+@utility menu-item {
+    @apply relative flex items-center w-full gap-3 px-3 py-2.5 font-medium rounded-lg text-sm transition-colors;
+}
+
+@utility menu-item-active {
+    @apply bg-brand-50 text-brand-500 dark:bg-brand-500/15 dark:text-brand-400;
+}
+
+@utility menu-item-inactive {
+    @apply text-gray-700 hover:bg-gray-100 group-hover:text-gray-700 dark:text-gray-300 dark:hover:bg-white/5 dark:hover:text-gray-300;
+}
+
+@utility menu-item-icon-active {
+    @apply text-brand-500 dark:text-brand-400;
+}
+
+@utility menu-item-icon-inactive {
+    @apply text-gray-500 group-hover:text-gray-700 dark:text-gray-400 dark:group-hover:text-gray-300;
+}
+
+@utility no-scrollbar {
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
